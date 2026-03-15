@@ -1,10 +1,22 @@
-type ProductPageProps = {
+import { Metadata } from "next";
+
+type Props = {
     params: Promise<{
         productId: string;
     }>;
 };
 
-const Product = async ({ params }: ProductPageProps) => {
+export const generateMetadata = async ({
+    params,
+}: Props): Promise<Metadata> => {
+    const { productId } = await params;
+    return {
+        title: `Product ${productId}`,
+        description: `Product ${productId} - best seller`,
+    };
+};
+
+const Product = async ({ params }: Props) => {
     //const result = await params;
     //const productId = result.productId;
     const { productId } = await params;
