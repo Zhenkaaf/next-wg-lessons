@@ -37,6 +37,7 @@ export const generateMetadata = async ({
 };
 
 const Post = async ({ params }: Props) => {
+    await new Promise((resolve) => setTimeout(resolve, 3000));
     const { postId } = await params;
     const post = await getPost(postId);
 
