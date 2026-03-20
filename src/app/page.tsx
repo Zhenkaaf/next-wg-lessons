@@ -4,6 +4,7 @@ export default function Home() {
     return (
         <div className="flex min-h-screen items-center justify-center flex-col bg-zinc-50 font-sans dark:bg-black">
             <h2>Hello everybody</h2>
+            <Link href="/complex-board">complex board --</Link>
             <Link href="/articles/id456?language=ru&edit=true">
                 Read in Russian (with edit=true)
             </Link>
